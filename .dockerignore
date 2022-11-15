@@ -1,0 +1,9 @@
+.github/
+.streamlit/
+.venv/
+.vscode/
+
+*.code-workspace
+__pycache__/
+*.tgz
+README.md

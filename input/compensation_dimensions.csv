@@ -1,0 +1,104 @@
+Mapped to,Category,error category,error sub category,complaint,additional detail 1,additional detail 2
+SCO,supplier short delivery - missing - high,operations_use_only,_ingredients,supplier_short_delivery,missing,impact_high
+SCO,supplier short delivery - missing - low,operations_use_only,_ingredients,supplier_short_delivery,missing,impact_low
+SCO,supplier short delivery - sub - high,operations_use_only,_ingredients,supplier_short_delivery,sku_change,impact_high
+SCO,supplier short delivery - sub - low,operations_use_only,_ingredients,supplier_short_delivery,sku_change,impact_low
+SCO,supplier short delivery - not enough - high,operations_use_only,_ingredients,supplier_short_delivery,wrong_amount_not_enough,impact_high
+SCO,supplier short delivery - not enough - low,operations_use_only,_ingredients,supplier_short_delivery,wrong_amount_not_enough,impact_low
+SCO,supplier short delivery - too much - high,operations_use_only,_ingredients,supplier_short_delivery,wrong_amount_too_much,impact_high
+SCO,supplier short delivery - too much - low,operations_use_only,_ingredients,supplier_short_delivery,wrong_amount_too_much,impact_low
+SCO,supplier late delivery - missing - high,operations_use_only,_ingredients,supplier_early_late_delivery,missing,impact_high
+SCO,supplier late delivery - missing - low,operations_use_only,_ingredients,supplier_early_late_delivery,missing,impact_low
+SCO,supplier late delivery - sub - high,operations_use_only,_ingredients,supplier_early_late_delivery,sku_change,impact_high
+SCO,supplier late delivery - sub - low,operations_use_only,_ingredients,supplier_early_late_delivery,sku_change,impact_low
+SCO,supplier late delivery - not enough - high,operations_use_only,_ingredients,supplier_early_late_delivery,wrong_amount_not_enough,impact_high
+SCO,supplier late delivery - not enough - low,operations_use_only,_ingredients,supplier_early_late_delivery,wrong_amount_not_enough,impact_low
+SCO,supplier late delivery - too much - high,operations_use_only,_ingredients,supplier_early_late_delivery,wrong_amount_too_much,impact_high
+SCO,supplier late delivery - too much - low,operations_use_only,_ingredients,supplier_early_late_delivery,wrong_amount_too_much,impact_low
+SCO,supplier quality issue - missing - high,operations_use_only,_ingredients,supplier_quality,missing,impact_high
+SCO,supplier quality issue - missing - low,operations_use_only,_ingredients,supplier_quality,missing,impact_low
+SCO,supplier quality issue - sub - high,operations_use_only,_ingredients,supplier_quality,sku_change,impact_high
+SCO,supplier quality issue - sub - low,operations_use_only,_ingredients,supplier_quality,sku_change,impact_low
+SCO,supplier quality issue - not enough - high,operations_use_only,_ingredients,supplier_quality,wrong_amount_not_enough,impact_high
+SCO,supplier quality issue - not enough - low,operations_use_only,_ingredients,supplier_quality,wrong_amount_not_enough,impact_low
+SCO,supplier quality issue - too much - high,operations_use_only,_ingredients,supplier_quality,wrong_amount_too_much,impact_high
+SCO,supplier quality issue - too much - low,operations_use_only,_ingredients,supplier_quality,wrong_amount_too_much,impact_low
+SCO,supplier advanced shortage - missing - high,operations_use_only,_ingredients,supplier_advanced_shortage,missing,impact_high
+SCO,supplier advanced shortage - missing - low,operations_use_only,_ingredients,supplier_advanced_shortage,missing,impact_low
+SCO,supplier advanced shortage - sub - high,operations_use_only,_ingredients,supplier_advanced_shortage,sku_change,impact_high
+SCO,supplier advanced shortage - sub - low,operations_use_only,_ingredients,supplier_advanced_shortage,sku_change,impact_low
+SCO,supplier advanced shortage - not enough - high,operations_use_only,_ingredients,supplier_advanced_shortage,wrong_amount_not_enough,impact_high
+SCO,supplier advanced shortage - not enough - low,operations_use_only,_ingredients,supplier_advanced_shortage,wrong_amount_not_enough,impact_low
+SCO,supplier advanced shortage - too much - high,operations_use_only,_ingredients,supplier_advanced_shortage,wrong_amount_too_much,impact_high
+SCO,supplier advanced shortage - too much - low,operations_use_only,_ingredients,supplier_advanced_shortage,wrong_amount_too_much,impact_low
+SCO,supplier failed delivery - missing - high,operations_use_only,_ingredients,supplier_no_delivery,missing,impact_high
+SCO,supplier failed delivery - missing - low,operations_use_only,_ingredients,supplier_no_delivery,missing,impact_low
+SCO,supplier failed delivery - sub - high,operations_use_only,_ingredients,supplier_no_delivery,sku_change,impact_high
+SCO,supplier failed delivery - sub - low,operations_use_only,_ingredients,supplier_no_delivery,sku_change,impact_low
+SCO,supplier failed delivery - not enough - high,operations_use_only,_ingredients,supplier_no_delivery,wrong_amount_not_enough,impact_high
+SCO,supplier failed delivery - not enough - low,operations_use_only,_ingredients,supplier_no_delivery,wrong_amount_not_enough,impact_low
+SCO,supplier failed delivery - too much - high,operations_use_only,_ingredients,supplier_no_delivery,wrong_amount_too_much,impact_high
+SCO,supplier failed delivery - too much - low,operations_use_only,_ingredients,supplier_no_delivery,wrong_amount_too_much,impact_low
+SCO,ordering error - missing - high,operations_use_only,_ingredients,internal_ordering_error,missing,impact_high
+SCO,ordering error - missing - low,operations_use_only,_ingredients,internal_ordering_error,missing,impact_low
+SCO,ordering error - sub - high,operations_use_only,_ingredients,internal_ordering_error,sku_change,impact_high
+SCO,ordering error - sub - low,operations_use_only,_ingredients,internal_ordering_error,sku_change,impact_low
+SCO,ordering error - not enough - high,operations_use_only,_ingredients,internal_ordering_error,wrong_amount_not_enough,impact_high
+SCO,ordering error - not enough - low,operations_use_only,_ingredients,internal_ordering_error,wrong_amount_not_enough,impact_low
+SCO,ordering error - too much - high,operations_use_only,_ingredients,internal_ordering_error,wrong_amount_too_much,impact_high
+SCO,ordering error - too much - low,operations_use_only,_ingredients,internal_ordering_error,wrong_amount_too_much,impact_low
+Production,Inventory Error - missing - high,operations_use_only,_ingredients,internal_production_error_inventory,missing,impact_high
+Production,Inventory Error - missing - low,operations_use_only,_ingredients,internal_production_error_inventory,missing,impact_low
+Production,Inventory Error - sub - high,operations_use_only,_ingredients,internal_production_error_inventory,sku_change,impact_high
+Production,Inventory Error - sub - low,operations_use_only,_ingredients,internal_production_error_inventory,sku_change,impact_low
+Production,Inventory Error - not enough - high,operations_use_only,_ingredients,internal_production_error_inventory,wrong_amount_not_enough,impact_high
+Production,Inventory Error - not enough - low,operations_use_only,_ingredients,internal_production_error_inventory,wrong_amount_not_enough,impact_low
+Production,Inventory Error - too much - high,operations_use_only,_ingredients,internal_production_error_inventory,wrong_amount_too_much,impact_high
+Production,Inventory Error - too much - low,operations_use_only,_ingredients,internal_production_error_inventory,wrong_amount_too_much,impact_low
+Production,Internal Mass damage - missing - high,operations_use_only,_ingredients,internal_production_damaged,missing,impact_high
+Production,Internal Mass damage - missing - low,operations_use_only,_ingredients,internal_production_damaged,missing,impact_low
+Production,Internal Mass damage - sub - high,operations_use_only,_ingredients,internal_production_damaged,sku_change,impact_high
+Production,Internal Mass damage - sub - low,operations_use_only,_ingredients,internal_production_damaged,sku_change,impact_low
+Production,Internal Mass damage - not enough - high,operations_use_only,_ingredients,internal_production_damaged,wrong_amount_not_enough,impact_high
+Production,Internal Mass damage - not enough - low,operations_use_only,_ingredients,internal_production_damaged,wrong_amount_not_enough,impact_low
+Production,Internal Mass damage - too much - high,operations_use_only,_ingredients,internal_production_damaged,wrong_amount_too_much,impact_high
+Production,Internal Mass damage - too much - low,operations_use_only,_ingredients,internal_production_damaged,wrong_amount_too_much,impact_low
+Production,Goods in / out - missing - high,operations_use_only,_ingredients,internal_production_error_goods_in,missing,impact_high
+Production,Goods in / out - missing - low,operations_use_only,_ingredients,internal_production_error_goods_in,missing,impact_low
+Production,Goods in / out - sub - high,operations_use_only,_ingredients,internal_production_error_goods_in,sku_change,impact_high
+Production,Goods in / out - sub - low,operations_use_only,_ingredients,internal_production_error_goods_in,sku_change,impact_low
+Production,Goods in / out - not enough - high,operations_use_only,_ingredients,internal_production_error_goods_in,wrong_amount_not_enough,impact_high
+Production,Goods in / out - not enough - low,operations_use_only,_ingredients,internal_production_error_goods_in,wrong_amount_not_enough,impact_low
+Production,Goods in / out - too much - high,operations_use_only,_ingredients,internal_production_error_goods_in,wrong_amount_too_much,impact_high
+Production,Goods in / out - too much - low,operations_use_only,_ingredients,internal_production_error_goods_in,wrong_amount_too_much,impact_low
+Production,Internal P&P - missing - high,operations_use_only,_ingredients,internal_pick_pack,missing,impact_high
+Production,Internal P&P - missing - low,operations_use_only,_ingredients,internal_pick_pack,missing,impact_low
+Production,Internal P&P - sub - high,operations_use_only,_ingredients,internal_pick_pack,sku_change,impact_high
+Production,Internal P&P - sub - low,operations_use_only,_ingredients,internal_pick_pack,sku_change,impact_low
+Production,Internal P&P - not enough - high,operations_use_only,_ingredients,internal_pick_pack,wrong_amount_not_enough,impact_high
+Production,Internal P&P - not enough - low,operations_use_only,_ingredients,internal_pick_pack,wrong_amount_not_enough,impact_low
+Production,Internal P&P - too much - high,operations_use_only,_ingredients,internal_pick_pack,wrong_amount_too_much,impact_high
+Production,Internal P&P - too much - low,operations_use_only,_ingredients,internal_pick_pack,wrong_amount_too_much,impact_low
+Production,No Delivery - Production,operations_use_only,logistics,internal_production_error_goods_out,no_delivery,
+Production,P&P - Ingredients,ingredient_item,_ingredients,pick_pack,missing,
+Production,1 Day roll - Production,operations_use_only,logistics,internal_production_error_goods_out,early_late_delivery,late_delivery_1_day
+Production,2 Day roll (not double roll - but a 2 day initial roll),operations_use_only,logistics,internal_production_error_goods_out,early_late_delivery,late_delivery_2_plus_days
+Production,Double roll (not 2 day roll - but a second rolled box),operations_use_only,logistics,internal_production_error_goods_out,recovery_box,late_delivery_1_day
+Production,Late Delivery - Delivered Same day,operations_use_only,logistics,internal_production_error_goods_out,early_late_delivery,late_delivery_same_day
+Other,Other - other - general diss,other,other,general_dissatisfaction_with_service,,
+Tech,internal forecasting issue - missing - high,operations_use_only,_ingredients,internal_forecasting_issue,missing,impact_high
+Tech,internal forecasting issue - missing - low,operations_use_only,_ingredients,internal_forecasting_issue,missing,impact_low
+Tech,internal forecasting issue - sku change - high,operations_use_only,_ingredients,internal_forecasting_issue,sku_change,impact_high
+Tech,internal forecasting issue - sku change - low,operations_use_only,_ingredients,internal_forecasting_issue,sku_change,impact_low
+Tech,internal forecasting issue - not enough - high,operations_use_only,_ingredients,internal_forecasting_issue,wrong_amount_not_enough,impact_high
+Tech,internal forecasting issue - not enough - low,operations_use_only,_ingredients,internal_forecasting_issue,wrong_amount_not_enough,impact_low
+Tech,internal forecasting issue - too much - high,operations_use_only,_ingredients,internal_forecasting_issue,wrong_amount_too_much,impact_high
+Tech,internal forecasting issue - too much - low,operations_use_only,_ingredients,internal_forecasting_issue,wrong_amount_too_much,impact_low
+Tech,internal ops tech issue - missing - high,operations_use_only,_ingredients,internal_ops_tech_issue,missing,impact_high
+Tech,internal ops tech issue - missing - low,operations_use_only,_ingredients,internal_ops_tech_issue,missing,impact_low
+Tech,internal ops tech issue - sku change - high,operations_use_only,_ingredients,internal_ops_tech_issue,sku_change,impact_high
+Tech,internal ops tech issue - sku change - low,operations_use_only,_ingredients,internal_ops_tech_issue,sku_change,impact_low
+Tech,internal ops tech issue - not enough - high,operations_use_only,_ingredients,internal_ops_tech_issue,wrong_amount_not_enough,impact_high
+Tech,internal ops tech issue - not enough - low,operations_use_only,_ingredients,internal_ops_tech_issue,wrong_amount_not_enough,impact_low
+Tech,internal ops tech issue - too much - high,operations_use_only,_ingredients,internal_ops_tech_issue,wrong_amount_too_much,impact_high
+Tech,internal ops tech issue - too much - low,operations_use_only,_ingredients,internal_ops_tech_issue,wrong_amount_too_much,impact_low
