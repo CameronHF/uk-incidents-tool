@@ -1,4 +1,1 @@
-.idea
-.iws
-workspace.xml
-tasks.xml
+app/db_functions/.streamlit/secrets.toml
