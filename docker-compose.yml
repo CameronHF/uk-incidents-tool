@@ -2,7 +2,7 @@ version: '1'
 
 services:
   app:
-    env_file: .streamlit/secrets.toml
+    env_file: app/db_functions/.streamlit/secrets.toml
     image: cameronjones/streamlit-build2
     ports:
       - 8501:8501/tcp

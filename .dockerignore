@@ -1,7 +1,6 @@
 .github/
 .streamlit/
 .venv/
-.vscode/
 
 *.code-workspace
 __pycache__/
