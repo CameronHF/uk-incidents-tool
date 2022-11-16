@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4ba1021-81bc-4d8a-94b5-b3011df11fc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db_functions/.streamlit/txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db_functions/dwh_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db_functions/dwh_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db_functions/secrets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +147,7 @@
       <workItem from="1668441881729" duration="93000" />
       <workItem from="1668441987441" duration="2604000" />
       <workItem from="1668454984514" duration="14206000" />
-      <workItem from="1668595664652" duration="6154000" />
+      <workItem from="1668595664652" duration="6304000" />
     </task>
     <servers />
   </component>
