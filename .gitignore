@@ -1,1 +1,2 @@
-*.toml
+# app
+secrets.toml
