@@ -1,0 +1,125 @@
+name: Streamlit web app production
+
+on:
+  workflow_dispatch:
+
+env:
+  APP_NAME: uk-incidents-tool
+  CHART_VERSION: 0.1.4
+  KUBERNETES_NAMESPACE: uk-csa-data-product-live
+  ARTIFACTORY_REGISTRY: repo.tools-k8s.hellofresh.io
+  IMAGE_PATH: customer-experience
+  APP_URL: uk-incidents-tool.dwh-k8s.hellofresh.io
+
+jobs:
+  build-docker:
+    runs-on: [self-hosted, default]
+    strategy:
+      max-parallel: 1
+    outputs:
+      version: ${{ steps.version.outputs.new_version }}
+    steps:
+    - name: Import Secrets
+      id: vault-secrets
+      uses: hashicorp/vault-action@v2.4.1
+      with:
+        url: https://vault.hellofresh.io/
+        method: kubernetes
+        path: tools-k8s
+        role: github-actions-runners-read-default
+        secrets: |
+          gh-actions/global/defaults GITHUB_TOKEN | GITHUB_TOKEN ;
+          gh-actions/global/defaults artifactory_username | ARTIFACTORY_USERNAME;
+          gh-actions/global/defaults artifactory_password | ARTIFACTORY_PASSWORD;
+
+    - name: Checkout source code
+      uses: actions/checkout@v3.0.2
+
+    - name: Checkout jetstream-ci-scripts
+      uses: actions/checkout@v3.0.2
+      with:
+        repository: hellofresh/jetstream-ci-scripts
+        path: jetstream-ci-scripts
+        token: ${{ steps.vault-secrets.outputs.GITHUB_TOKEN }}
+
+    - name: Log into registry ${{ env.ARTIFACTORY_REGISTRY }}
+      uses: docker/login-action@v2.0.0
+      with:
+        registry: ${{ env.ARTIFACTORY_REGISTRY }}
+        username: ${{ steps.vault-secrets.outputs.ARTIFACTORY_USERNAME }}
+        password: ${{ steps.vault-secrets.outputs.ARTIFACTORY_PASSWORD }}
+
+    - name: Generate Version
+      id: version
+      uses: ./jetstream-ci-scripts/actions/bump-version
+      with:
+        ACCESS_TOKEN: ${{ steps.vault-secrets.outputs.GITHUB_TOKEN }}
+        REPOSITORY: ${{ github.repository }}
+
+    - name: Build and push back app Docker image
+      uses: docker/build-push-action@v3.1.0
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ env.ARTIFACTORY_REGISTRY }}/${{ env.IMAGE_PATH }}/${{ env.APP_NAME }}:${{ steps.version.outputs.new_version }}
+          ${{ env.ARTIFACTORY_REGISTRY }}/${{ env.IMAGE_PATH }}/${{ env.APP_NAME }}:latest
+
+    - name: Github release
+      uses: ./jetstream-ci-scripts/actions/github-release
+      with:
+        access_token: ${{ steps.vault-secrets.outputs.GITHUB_TOKEN }}
+        tag: ${{ steps.version.outputs.new_version }}
+
+  deploy-helm:
+    runs-on: [self-hosted, default]
+    needs: [build-docker]
+    steps:
+    - name: Import Secrets
+      id: vault-secrets
+      uses: hashicorp/vault-action@v2.4.1
+      with:
+        url: https://vault.hellofresh.io/
+        method: kubernetes
+        path: tools-k8s
+        role: github-actions-runners-read-default
+        secrets: |
+          gh-actions/global/defaults GITHUB_TOKEN | GITHUB_TOKEN ;
+          gh-actions/global/defaults artifactory_username | ARTIFACTORY_USERNAME ;
+          gh-actions/global/defaults artifactory_password | ARTIFACTORY_PASSWORD ;
+
+    - name: Checkout source code
+      uses: actions/checkout@v3.0.2
+      with:
+        fetch-depth: 0
+        ref: ${{ steps.get_release.outputs.tag_name }}
+
+    - name: Checkout jetstream-ci-scripts
+      uses: actions/checkout@v3.0.2
+      with:
+        repository: hellofresh/jetstream-ci-scripts
+        path: jetstream-ci-scripts
+        token: ${{ steps.vault-secrets.outputs.GITHUB_TOKEN }}
+
+    - name: Setup kubeconfig
+      uses: ./jetstream-ci-scripts/actions/build-kubeconfig/
+      with:
+        environment: dwh-live
+
+    - name: Deploy with helm
+      uses: ./jetstream-ci-scripts/actions/helm3-deploy/
+      with:
+        repository-name: hf-charts
+        repository-url: https://artifactory.tools-k8s.hellofresh.io/artifactory/helm/
+        release-name: ${{ env.APP_NAME }}
+        chart-name: streamlit
+        version: ${{ env.CHART_VERSION }}
+        # values-path: orchestration/values-hf.yaml
+        namespace: ${{ env.KUBERNETES_NAMESPACE }}
+        set-string: image.repository="${{ env.ARTIFACTORY_REGISTRY }}/${{ env.IMAGE_PATH }}/${{ env.APP_NAME }}",image.tag="${{ needs.build-docker.outputs.version }}",ingress.hosts[0].host="${{ env.APP_URL }}",ingress.hosts[0].paths[0].path="/",ingress.hosts[0].paths[0].pathType="Prefix"
+
+    - name: Ensure Rollout
+      uses: ./jetstream-ci-scripts/actions/ensure-k8s-rollout
+      with:
+        deployment-namespace: ${{ env.KUBERNETES_NAMESPACE }}
+        deployment-selector: app.kubernetes.io/instance=${{ env.APP_NAME }}

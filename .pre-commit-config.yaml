@@ -1,0 +1,54 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+      # - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/psf/black
+  rev: 22.3.0
+  hooks:
+  - id: black
+    args: [--line-length=120]
+- repo: https://github.com/pycqa/isort
+  rev: 5.10.1
+  hooks:
+  - id: isort
+    name: isort (python)
+    args:
+    - --profile=black
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 0.6.2
+  hooks:
+  - id: sqlfluff-fix
+    args: [--exclude-rules, 'L031,L034,L016,L014']                         # "L031" changes alias, which can break BigQuery stmts
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.1.0
+  hooks:
+  - id: pretty-format-toml
+    args: [--autofix]
+    exclude: ^(.*poetry.lock)
+  - id: pretty-format-yaml
+    args: [--autofix]
+    exclude: ^(helm-charts|orchestration/docker-compose.yaml)
+- repo: local
+  hooks:
+  - id: shfmt
+    name: shfmt
+    minimum_pre_commit_version: 2.4.0
+    language: golang
+    additional_dependencies: [mvdan.cc/sh/v3/cmd/shfmt@v3.2.2]
+    entry: shfmt
+    args: [-w]
+    types: [shell]
+- repo: https://github.com/radix-ai/auto-smart-commit
+  rev: v1.0.2
+  hooks:
+  - id: auto-smart-commit
+- repo: https://github.com/norwoodj/helm-docs
+  rev: v1.2.0
+  hooks:
+  - id: helm-docs
+    args:
+        # Make the tool search for charts only under the `example-charts` directory
+    - --chart-search-root=helm-charts
